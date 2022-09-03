@@ -1,0 +1,161 @@
+///////Assignment 1 - Javascript
+
+// Question 1:
+// var str1 = 'Today is';
+// var str2 = '      a beautiful day     '
+// var str3 = ' In Hawaii.     '
+// Result = 'Today is a beautiful day In Hawaii.'
+// Use the str1, str2, str3 variables to create the Result string. Keep the extra spaces, lowercase and uppercase letters in mind.
+/////// Program for Question 1
+console.clear();
+
+var str1 = "Today is";
+var str2 = "  a beautiful day";
+var str3 = "In Hawaii";
+var Result = str1 + str2 + " " + str3;
+console.log(Result);
+
+// Question 2:
+// var enteredAlphabet = 'd' or "D"
+// Write a program to check vowel, consonant or non-alphabet using switch case. Change value of enteredAlphabet and check if your code works fine.
+/////// Program for Question 2
+
+var enteredAlphabet = "e";
+switch (enteredAlphabet) {
+  case "a":
+  case "A":
+  case "e":
+  case "E":
+  case "i":
+  case "I":
+  case "O":
+  case "o":
+  case "u":
+  case "U":
+    console.log("The Enterd Alphabet is Vowel");
+    break;
+  case "b":
+  case "B":
+  case "c":
+  case "C":
+  case "d":
+  case "D":
+  case "f":
+  case "F":
+  case "g":
+  case "G":
+  case "h":
+  case "H":
+  case "j":
+  case "J":
+  case "k":
+  case "K":
+  case "l":
+  case "L":
+  case "m":
+  case "M":
+  case "n":
+  case "N":
+  case "p":
+  case "P":
+  case "q":
+  case "Q":
+  case "r":
+  case "R":
+  case "s":
+  case "S":
+  case "t":
+  case "T":
+  case "v":
+  case "V":
+  case "w":
+  case "W":
+  case "x":
+  case "X":
+  case "y":
+  case "Y":
+  case "z":
+  case "Z":
+    console.log("the Enterd Alphabet is Consonant");
+    break;
+  default:
+    console.log("Youn Have Entered Non-Alphabet");
+}
+// Question 3:
+// Write a JavaScript program to create menu driven calculator that performs basic arithmetic operations (add, subtract, multiply and divide) using switch case. The calculator should input two numbers and an operator: +, -, *, / from the user. It should perform operation according to the operator entered and must take input in given format.
+
+/////// Program for Question 3
+
+const operator = prompt("Enter The Arthimatic Operation ('+,-,*,/'");
+const num1 = parseFloat(prompt("Enter The First Number"));
+const num2 = parseFloat(prompt("Enter The Second Number"));
+
+switch (operator) {
+  case "+":
+    console.log(parseFloat(num1 + num2));
+    break;
+  case "-":
+    console.log(parseFloat(num1 - num2));
+    break;
+  case "*":
+    console.log(parseFloat(num1 * num2));
+    break;
+  case "/":
+    console.log(parseFloat(num1 / num2));
+    break;
+  default:
+    console.log("Invalid operator");
+    break;
+}
+
+// Question 4:
+// Write a JavaScript program to input sides of a triangle and check whether a triangle is equilateral, scalene or isosceles triangle using if else.
+// Properties of triangle:
+// A triangle is said Equilateral Triangle, if all its sides are equal. If a, b, c are three sides of triangle. Then, the triangle is equilateral only if a == b == c.
+// A triangle is said Isosceles Triangle, if its two sides are equal. If a, b, c are three sides of triangle. Then, the triangle is isosceles if either a == b or a == c or b == c.
+// A triangle is said Scalene Triangle, if none of its sides are equal.
+
+/////// Program for Question 4
+
+var a = 3;
+var b = 4;
+var c = 4;
+if (a == b && b == c) {
+  console.log("The Given triangle is said Equilateral  Triangle ");
+} else if (a == b || b == c || a == c) {
+  console.log("The Given triangle is said Isosceles  Triangle");
+} else {
+  console.log(
+    "The Given triangle is said Scalene Triangle, if none of its sides are equal"
+  );
+}
+
+// Write a JavaScript program to input electricity unit charge and calculate the total electricity bill according to the given condition:
+// For first 50 units Rs. 0.50/unit
+// For next 100 units Rs. 0.75/unit
+// For next 100 units Rs. 1.20/unit
+// For unit above 250 Rs. 1.50/unit. An additional surcharge of 20% is added to the bill.
+// For example, input: 20 units then bill is Rs10
+// Total Units: 300
+// 50 * 0.5 = 25
+// 100 * 0.75 = 75
+// 100 * 1.2 = 120
+// 50 * 1.5 = 75
+// Total = 295 + 20% surcharge on 295
+// Result = INR 354
+
+function electricitybill(units) {
+  if (units <= 50) {
+    return units * 0.5;
+  } else if (units <= 150) {
+    return 25 + (units - 50) * 0.75;
+  } else if (units <= 250) {
+    return 25 + 75 + (units - 150) * 1.2;
+  } else if (units > 250) {
+    let value = 25 + 75 + 120 + (units - 250) * 1.5;
+    value = value + (value * 20) / 100;
+    return value;
+  }
+}
+electricitybill(300);
+
